@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Add task — PyWeave{% endblock %}
+
+{% block main %}
+  <h1 class="h3 mb-3">Add task</h1>
+
+  <form action="{{ url_for('add') }}" method="post" class="card">
+    <div class="card-body">
+      {{ form.hidden_tag() }}
+      <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control" + (" is-invalid" if form.title.errors else "")) }}
+        {% for error in form.title.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+      {{ form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+{% endblock %}

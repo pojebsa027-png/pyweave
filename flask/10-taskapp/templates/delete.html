@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Delete task — PyWeave{% endblock %}
+
+{% block main %}
+  <h1 class="h3 mb-3">Delete task</h1>
+
+  <form action="{{ url_for('delete', task_id=task.id) }}" method="post" class="card">
+    <div class="card-body">
+      {{ form.hidden_tag() }}
+      <p>Delete <strong>{{ task.title }}</strong>? This cannot be undone.</p>
+      {{ form.submit(class="btn btn-danger") }}
+      <a class="btn btn-link" href="{{ url_for('index') }}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}

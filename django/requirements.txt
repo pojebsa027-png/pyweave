@@ -1,0 +1,4 @@
+Django==5.1.4
+
+# Optional — uncomment together with config/oauth_settings.py
+# social-auth-app-django==5.4.2

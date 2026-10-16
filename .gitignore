@@ -1,0 +1,42 @@
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.Python
+*.so
+
+# --- django ---
+*.log
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+oauth_settings.py
+media/
+staticfiles/
+
+# --- flask ---
+instance/
+tasks.db
+*.db
+
+# --- tooling ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# --- editors / os ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*~

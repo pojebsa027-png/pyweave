@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <h1>Tasks</h1>
+  {% if tasks %}
+    <ul>
+      {% for task in tasks %}
+        <li>{{ task.title }} — {{ task.created_at.strftime("%Y-%m-%d %H:%M") }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks yet. The table exists, it is just empty.</p>
+  {% endif %}
+{% endblock %}

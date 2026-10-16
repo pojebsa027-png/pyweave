@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Add task — PyWeave{% endblock %}
+
+{% block main %}
+  <h1>Add task</h1>
+  <form action="{{ url_for('add') }}" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.title.label }} {{ form.title() }}
+    {{ form.submit() }}
+  </form>
+{% endblock %}

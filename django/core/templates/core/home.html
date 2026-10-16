@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Notes — {{ app_name }}{% endblock %}
+
+{% block content %}
+  <h1>Notes</h1>
+  <p class="muted">
+    Running {% if islocal %}locally{% else %}remotely{% endif %}
+    · {{ notes|length }} note{{ notes|length|pluralize }}
+  </p>
+
+  {% if notes %}
+    <ul class="note-list">
+      {% for note in notes %}
+        <li>
+          <h2>{{ note.title }}</h2>
+          {% if note.body %}<p>{{ note.body|linebreaksbr }}</p>{% endif %}
+          <time datetime="{{ note.created_at|date:'c' }}">{{ note.created_at|date:"Y-m-d H:i" }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="empty">Nothing here yet. <a href="{% url 'core:note-create' %}">Write the first note</a>.</p>
+  {% endif %}
+{% endblock %}
